@@ -33,7 +33,6 @@ import androidx.annotation.Nullable;
  * 8、添加滑动的惯性处理；
  * 9、最后进行计算
  *
- *
  * @author : 老高
  * @date : 2020/5/1
  **/
@@ -83,7 +82,11 @@ public class BigLongView extends View implements GestureDetector.OnGestureListen
         mMatrix = new Matrix();
     }
 
-
+    /**
+     * 这里的方法可以进行重载，方便后续扩展
+     *
+     * @param is
+     */
     public void setImage(InputStream is) {
         mOptions.inJustDecodeBounds = true;
         BitmapFactory.decodeStream(is, null, mOptions);
@@ -218,7 +221,8 @@ public class BigLongView extends View implements GestureDetector.OnGestureListen
         if (mScroller.isFinished()) {
             return;
         }
-
+        // 还在滑动的状态，获取当前的Y值， 因为Y值肯定是在第一块区域开始的，上面的mScroller.fling已经设定的
+        // 所以，获取Y值给到top，然后计算bottom的值，开始进行重绘
         if (mScroller.computeScrollOffset()) {
             mRect.top = mScroller.getCurrY();
             mRect.bottom = mRect.top + mInitRect;
