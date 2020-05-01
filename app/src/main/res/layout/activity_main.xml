@@ -9,6 +9,7 @@
     <com.laogao.biglongview.BigLongView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/blv_view" />
+        android:id="@+id/blv_view"
+        android:background="#B02125"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
