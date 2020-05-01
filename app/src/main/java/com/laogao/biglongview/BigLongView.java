@@ -27,8 +27,11 @@ import androidx.annotation.Nullable;
  * 3、在获取到view的宽高，即onMeasure中进行创建加载图片的rect的区域
  * 4、在onDraw中复用bitmap，并将加载到的区域进行缩放，绘制到canvas中
  * <p>
- * 5、监听触摸的点击事件，交给GestureDetector ；在每次点击的时候就停止上一次的滑动事件
- * 6、处理触摸的滑动事件；添加滑动的惯性处理，并最后进行计算
+ * 5、监听触摸的点击事件，交给GestureDetector ；
+ * 6、在每次点击的时候就停止上一次的滑动事件
+ * 7、处理触摸的滑动事件；
+ * 8、添加滑动的惯性处理；
+ * 9、最后进行计算
  *
  *
  * @author : 老高
